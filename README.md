@@ -1,6 +1,6 @@
 # TaskFlow
 
-A task management dashboard built with React, TypeScript, Redux, and Redux Saga.
+A task management dashboard built with React, TypeScript, Redux, and Redux Saga. Data APIs served by Express Nodejs Server
 
 ## Features
 
