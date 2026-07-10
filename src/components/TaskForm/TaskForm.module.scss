@@ -1,0 +1,158 @@
+@import '../../styles/colors';
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: $card-background;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px rgb(0 0 0 / 15%);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid $border-color;
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: $text-muted;
+  line-height: 1;
+
+  &:hover {
+    color: $text-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+.form {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $text-color;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid $border-color;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgb(79 70 229 / 20%);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.formGroupError {
+  input {
+    border-color: $danger-color;
+
+    &:focus {
+      border-color: $danger-color;
+      box-shadow: 0 0 0 2px rgb(239 68 68 / 20%);
+    }
+  }
+}
+
+.fieldError {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: $danger-color;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+
+  .formGroup {
+    flex: 1;
+  }
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.cancelButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid $border-color;
+  background-color: $card-background;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $background-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+.submitButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}

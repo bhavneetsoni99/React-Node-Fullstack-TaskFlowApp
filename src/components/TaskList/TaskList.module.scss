@@ -1,0 +1,40 @@
+@import '../../styles/colors';
+
+.taskList {
+  margin-top: 1rem;
+}
+
+.virtualContainer {
+  flex: 1;
+  position: relative;
+}
+
+.virtualItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.virtualRowFlex {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+
+  &>div {
+    flex: 1 1 300px;
+  }
+}
+
+.loading,
+.error,
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: $text-muted;
+}
+
+.error {
+  color: $danger-color;
+}

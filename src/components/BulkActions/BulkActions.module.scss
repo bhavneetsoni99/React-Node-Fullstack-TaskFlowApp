@@ -1,0 +1,70 @@
+@import '../../styles/colors';
+
+.bulkActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: lighten($primary-color, 45%);
+  border: 1px solid lighten($primary-color, 35%);
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.selectedCount {
+  font-weight: 500;
+  color: $primary-color;
+}
+
+.bulkActionButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  padding-right: 25px;
+
+  button,
+  select {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: 0.25rem;
+    background-color: $card-background;
+    cursor: pointer;
+    font-size: 0.75rem;
+
+    &:hover {
+      background-color: $background-color;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+  }
+
+  .deleteButton {
+    background-color: lighten($danger-color, 35%);
+    border-color: lighten($danger-color, 25%);
+    color: $danger-color;
+
+    &:hover {
+      background-color: lighten($danger-color, 25%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $danger-color;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

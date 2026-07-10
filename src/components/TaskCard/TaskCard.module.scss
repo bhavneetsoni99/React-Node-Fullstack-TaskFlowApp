@@ -1,0 +1,159 @@
+@import '../../styles/colors';
+
+.taskCard {
+  background-color: $card-background;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+  }
+}
+
+.priorityHigh {
+  border-left: 4px solid $danger-color;
+}
+
+.priorityMedium {
+  border-left: 4px solid $warning-color;
+}
+
+.priorityLow {
+  border-left: 4px solid $success-color;
+}
+
+.selected {
+  border-color: $primary-color;
+  border-left: 4px solid $primary-color;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.taskTitle {
+  margin: 0;
+  font-size: 1rem;
+  color: $text-color;
+}
+
+.taskActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.editButton {
+  background-color: $border-color;
+  color: $text-color;
+
+  &:hover {
+    background-color: darken($border-color, 10%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+.deleteButton {
+  background-color: lighten($danger-color, 35%);
+  color: $danger-color;
+
+  &:hover {
+    background-color: lighten($danger-color, 25%);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $danger-color;
+    outline-offset: 2px;
+  }
+}
+
+.taskDescription {
+  margin: 0.5rem 0;
+  color: $text-muted;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.taskMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+.statusSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  label {
+    color: $text-muted;
+  }
+}
+
+.assignee {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.priority {
+  color: $text-muted;
+}
+
+.commentsToggle {
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  border: 1px solid $border-color;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $background-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+.taskCheckbox {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  cursor: pointer;
+
+  input {
+    cursor: pointer;
+  }
+}

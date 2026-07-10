@@ -1,0 +1,49 @@
+// Centralized color palette for the app
+$primary-color: #4f46e5;
+$primary-hover: #4338ca;
+$danger-color: #ef4444;
+$success-color: #22c55e;
+$success-bg: #2e7d32;
+$warning-color: #f59e0b;
+$info-color: #3b82f6;
+$error-color: #d32f2f;
+$text-color: #1f2937;
+$text-muted: #6b7280;
+$border-color: #e5e7eb;
+$background-color: #f9fafb;
+$card-background: #ffffff;
+
+$colors: (
+    primary: $primary-color,
+    primary-hover: $primary-hover,
+    danger: $danger-color,
+    success: $success-color,
+    success-bg: $success-bg,
+    warning: $warning-color,
+    info: $info-color,
+    error: $error-color,
+    text: $text-color,
+    text-muted: $text-muted,
+    border: $border-color,
+    background: $background-color,
+    card: $card-background,
+);
+
+@mixin color($name, $property: color) {
+    @if map-has-key($colors, $name) {
+        $value: map-get($colors, $name);
+        #{$property}: $value;
+    }
+
+    @else {
+        @warn "Color '#{$name}' not found in the shared color map.";
+    }
+}
+
+@mixin bg($name) {
+    @include color($name, background-color);
+}
+
+@mixin border-color($name) {
+    @include color($name, border-color);
+}

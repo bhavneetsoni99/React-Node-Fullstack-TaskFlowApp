@@ -1,0 +1,73 @@
+@import '../../styles/colors';
+
+.commentsSection {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+
+  h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+.commentsList {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.comment {
+  padding: 0.5rem;
+  background-color: $background-color;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+
+  strong {
+    font-size: 0.75rem;
+  }
+
+  p {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+  }
+
+  small {
+    font-size: 0.625rem;
+    color: $text-muted;
+  }
+}
+
+.noComments {
+  color: $text-muted;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.addComment {
+  margin-top: 0.5rem;
+
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: 0.25rem;
+    resize: vertical;
+    min-height: 60px;
+    font-size: 0.875rem;
+  }
+
+  button {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+}
