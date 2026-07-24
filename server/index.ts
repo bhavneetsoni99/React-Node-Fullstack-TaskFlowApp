@@ -1,7 +1,12 @@
 import express from 'express';
+import path from 'path';
 import cors from 'cors';
+import { fileURLToPath } from 'url';
 import { mockTasks, mockUsers, mockComments } from './mockData';
 import type { Task, TaskComment } from '../src/types/types';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
@@ -137,8 +142,15 @@ app.post('/api/reset', async (_req, res) => {
   res.json({ success: true });
 });
 
+const distPath = path.join(__dirname, '../dist');
+app.use(express.static(distPath));
+
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
 const PORT = process.env.PORT || 3001;
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
 
 app.listen(Number(PORT), HOST, () => {
   console.log(`Server running on http://${HOST}:${PORT}`);
