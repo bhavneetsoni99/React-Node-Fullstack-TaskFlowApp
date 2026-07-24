@@ -1,9 +1,22 @@
 services:
   - type: web
-    name: taskflow
+    name: taskflow-api
     env: node
-    buildCommand: npm install && npm run build
+    buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
+
+  - type: static
+    name: taskflow-ui
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://taskflow-api.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
